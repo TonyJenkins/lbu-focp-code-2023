@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
 
+
+from statistics import mean
+
+
 if __name__ == '__main__':
 
-    margins = []
+    TIMES = ['8am', '10am', '12noon', '2pm', '4pm', '6pm',]
 
-    for matches in range(5):
+    temperatures = []
 
-        result = input('Enter a result: ')
+    for reading_time in TIMES:
 
-        goals_for = int(result.split('-')[0])
-        goals_against = int(result.split('-')[1])
+        reading = int(input(f'Enter {reading_time} reading: ')[:-1])
+        temperatures.append(reading)
 
-        margins.append(goals_for - goals_against)
-
-    biggest_win = max(margins)
-    biggest_defeat = abs(min(margins))
-    goal_difference = sum(margins)
+    max_temp = max(temperatures)
+    min_temp = min(temperatures)
+    avg_temp = mean(temperatures)
 
     print()
-    print(f'Biggest Win:  {biggest_win}.')
-    print(f'Biggest Loss: {biggest_defeat}.')
-    print(f'Goal Diff:    {goal_difference}.')
+    print(f'Maximum: {max_temp}C.')
+    print(f'Minimum: {min_temp}C.')
+    print(f'Average: {avg_temp:.2f}C.')

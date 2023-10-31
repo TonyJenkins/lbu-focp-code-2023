@@ -1,37 +1,45 @@
 #!/usr/bin/env python3
 
-#This is a template for the game where a computer picks a code consisting of 4 numbers 1->6 (no repeats)
-#A player needs to crack the code, after each guess they are told how many are in the correct place
-#and how many are valid numbers, but in the wrong place
-#The functions need to be completed.
+import random
 
 def make_computer_choice():
-    # this function will need to return a list of 4 numbers - from a range of 1->6 with no number repeating
-    return []
+    numbers = ['1', '2', '3', '4', '5', '6']
+    random.shuffle(numbers)
+    return numbers[:-2]
 
 
 def validate_player_input(selection):
-    # a function that will return True if the input is considered Valid, otherwise False
-    return True
+    if len(selection) != 4:
+        return False
+    for x in selection:
+        if x not in ['1', '2', '3', '4', '5', '6']:
+            return False
 
+    return True
 
 def get_input():
     # this function needs to return the player selection
-    player_input = []
     while True:
+        player_input = input('Please enter a 4 digit code using just the numbers 1->6:')
         if validate_player_input(player_input):
             break
-    return player_input
+    return list(player_input)
 
 
 def get_matched_code_positions(a, b):
-    # function that will return the number of matched items in a compared to b
-    return 4
+    count = 0
+    for x in range(len(a)):
+        if a[x] == b[x]:
+            count += 1
+    return count
 
 
 def get_number_contained_in_both(a, b):
-    # function that will return the number of items contained in both a and b
-    return 0
+    count = 0
+    for x in a:
+        if x in b:
+            count += 1
+    return count
 
 
 if __name__ == '__main__':

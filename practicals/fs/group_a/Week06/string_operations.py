@@ -1,16 +1,24 @@
 #!/usr/bin/env python3
 
 def does_the_string_contain_spaces(text_input):
+    for char in text_input:
+        if char == ' ':
+            return True
     return False
-
 
 def count_characters_in_string(text_input):
     number = 0
+    for char in text_input:
+        if char != ' ':
+            number += 1
     return number
 
 
 def count_spaces_in_string(text_input):
     counter = 0
+    for char in text_input:
+        if char == ' ':
+            counter += 1
     return counter
 
 

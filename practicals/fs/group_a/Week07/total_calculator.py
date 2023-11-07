@@ -17,7 +17,7 @@ if __name__ == '__main__':
                 except ValueError:
                     print("found dodgy data")
             print(total)
-            f.write("Total is " + str(total))
+            f.write(f"Total is {total}")
     except FileNotFoundError:
         print('File not found')
     except IndexError:

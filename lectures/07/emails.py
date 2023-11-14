@@ -7,7 +7,7 @@ import sys
 DOMAIN = 'pop.ac.uk'
 
 
-def line_spint(infile_line):
+def line_split(infile_line):
     return infile_line[:8], infile_line[8:]
 
 
@@ -50,7 +50,7 @@ if __name__ == '__main__':
         with open(sys.argv[1], 'r') as infile, open('emails.txt', 'w') as outfile:
             for line in infile.readlines():
 
-                user_id, name = line_spint(line)
+                user_id, name = line_split(line)
 
                 outfile.write(f'{user_id} {build_email(name)}\n')
 

@@ -1,0 +1,5 @@
+france,paris
+england,london
+wales,cardiff
+ireland,dublin
+denmark,copenhagen

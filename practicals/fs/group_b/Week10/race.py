@@ -48,7 +48,7 @@ if __name__ == '__main__':
 
         print(f'Fastest Time: {time_as_string(min(times))}')
         print(f'Slowest Time: {time_as_string(max(times))}')
-        print(f'Average Time: {mean(times):.2f}')
+        print(f'Average Time: {time_as_string(round(mean(times)))}')
 
         print()
         print(f'Fastest Runner: {runners[times.index(min(times))]}')
